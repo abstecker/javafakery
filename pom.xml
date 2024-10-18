@@ -116,23 +116,6 @@
                     </plugins>
                 </configuration>
             </plugin>
-            <!-- OWASP Dependency-Check plugin -->
-            <plugin>
-                <groupId>org.owasp</groupId>
-                <artifactId>dependency-check-maven</artifactId>
-                <version>10.0.4</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <nvdApiKey>9d0b2741-9ee6-4dbc-8fde-f5669ed2074e</nvdApiKey>
-                    <nvdApiDelay>2500</nvdApiDelay>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
