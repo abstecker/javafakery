@@ -1,6 +1,7 @@
 package com.example.my_project;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -30,6 +31,12 @@ public class CalculatorTest {
     }
 
     @Test
+    @DisplayName("Truth is falsehood")
+    public void fail() {
+        assertTrue(false);
+    }
+
+    @Test
     @DisplayName("Testing add method")
     public void testAdd() {
         Calculator calculator = new Calculator();
@@ -40,14 +47,14 @@ public class CalculatorTest {
     @DisplayName("Paramaterized testing add method")
     @ParameterizedTest(name = "{0} + {1} = {2}")
     @CsvSource({
-        "0,    1,   1",
-        "1,    2,   3",
-        "49,  51, 100",
-        "1,  100, 101"
+            "0,    1,   1",
+            "1,    2,   3",
+            "49,  51, 100",
+            "1,  100, 101"
     })
     void add(int first, int second, int expectedResult) {
         Calculator calculator = new Calculator();
         assertEquals(expectedResult, calculator.add(first, second),
-            () -> first + " + " + second + " should equal " + expectedResult);
+                () -> first + " + " + second + " should equal " + expectedResult);
     }
 }
